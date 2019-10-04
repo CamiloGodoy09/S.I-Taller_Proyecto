@@ -1,0 +1,65 @@
+CREATE TABLE `cliente` (
+  `foto` blob NOT NULL,
+  `nombre` char(30) NOT NULL,
+  `apellidos` char(30) NOT NULL,
+  `idCliente` int(15) NOT NULL,
+  `noRegistro` int(30) NOT NULL,
+  `fechaNacimiento` date NOT NULL,
+  `genero` enum('Hombre','Mujer','Otro') NOT NULL,
+  `correo` char(30) NOT NULL,
+  `telefono` bigint(30) NOT NULL,
+  `usuario` char(20) NOT NULL,
+  `clave` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`foto`, `nombre`, `apellidos`, `idCliente`, `noRegistro`, `fechaNacimiento`, `genero`, `correo`, `telefono`, `usuario`, `clave`) VALUES
+(0x6e6f20686179, 'andres', 'pepito', 123, 1, '0000-00-00', 'Hombre', 'asdasd@gmail.com', 2342342, 'pepe', '123'),
+(0x636f7361732072617261732e706e67, 'con foto', 'foto', 456, 7, '1999-09-23', 'Mujer', 'pepito@gmail.com', 3456789, 'foto', 'foto'),
+('', 'foto', 'gonzales', 9870, 6, '2000-09-23', 'Mujer', 'asdsa@gmail.com', 345345, 'foto', '234'),
+('', 'junior alberto', 'cardenas daza', 243567, 11, '2222-02-22', 'Hombre', 'asdsa@gmail.com', 3453453, 'modal', 'asdqwe'),
+('', 'assd', 'asd', 765832, 13, '2018-09-22', 'Hombre', 'asdsa@gmail.com', 2234234, 'junior', 'asdasd'),
+('', 'junior alberto', 'cardenas daza', 980765, 9, '2222-02-22', 'Hombre', 'asdsa@gmail.com', 3453453, 'junior', 'asd234'),
+('', 'john', 'mendoza', 986412, 4, '2000-08-02', 'Hombre', 'jacardenas0186@misena.edu.co', 12323123, 'john', '1234'),
+('', 'pepito', 'gomez', 3453345, 15, '2222-09-22', 'Hombre', 'asdsa@gmail.com', 3453453, 'gomez', 'adasdas'),
+(0x466f746f2e6a7067, 'junior alberto', 'cardenas daza', 3570986, 17, '2222-02-22', 'Hombre', 'asdsa@gmail.com', 3453453, 'pepe', 'asdasd'),
+(0x466f746f2e6a7067, 'junior alberto', 'cardenas daza', 9863002, 16, '2222-02-22', 'Hombre', 'juniorcardenas550@gmail.com', 3453453, 'junior', 'asdasd'),
+('', 'asdas', 'asd', 97543202, 12, '2019-08-22', 'Hombre', 'juniorcardenas550@gmail.com', 3453453, 'pepe', 'asdwer'),
+('', 'brayan albeiro', 'estrada tinoco', 1001057862, 5, '2001-09-12', 'Hombre', 'baestrada2@misena.edsu.co', 2147483647, 'brayan', '1234'),
+(0x74686f72312e706e67, 'prueba', 'segura', 1020304050, 21, '2000-02-11', 'Hombre', 'pruebasegura@gmail.con', 32083906, 'prueba', 'segura'),
+(0x74686f72312e706e67, 'junior', 'cardenas', 1192896810, 2, '2001-07-11', 'Hombre', 'jacardenas0186@misena.edu.co', 3208390676, 'Repaspi023', '1234'),
+(0x466f746f2e6a7067, 'wilson', 'andres', 1193083994, 20, '2019-02-22', 'Hombre', 'asdsa@gmail.com', 3453453, 'brayan', 'asd345');
+
+
+
+
+CREATE TABLE `vehiculo` (
+  `tipoVehiculo` varchar(20) NOT NULL,
+  `noPlaca` varchar(8) NOT NULL,
+  `marca` varchar(20) NOT NULL,
+  `modelo` char(20) NOT NULL,
+  `idCliente` int(15) DEFAULT NULL,
+  `colorCarro` char(30) NOT NULL,
+  `tipoCarroceria` char(30) DEFAULT NULL,
+  `servicio` char(30) NOT NULL,
+  `cilindraje` varchar(30) NOT NULL,
+  `tarjetaPropiedad` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vehiculo`
+--
+
+INSERT INTO `vehiculo` (`tipoVehiculo`, `noPlaca`, `marca`, `modelo`, `idCliente`, `colorCarro`, `tipoCarroceria`, `servicio`, `cilindraje`, `tarjetaPropiedad`) VALUES
+('Moto', 'AQL-209', 'ktm', '2019', 1192896810, 'negra', 'Sin carroceria', 'Particular', '200', 0x74686f72312e706e67),
+('  moto', 'asd-123', 'r15', '  2018', 1001057862, ' azul', '    np', '    publico', '  200', ''),
+('carro', 'ASD-678', 'pulsar', '2029', 1192896810, 'azul', 'no hay', 'Publico', '200', ''),
+('', 'pulsar', '', '', 123, '', '', '', '', ''),
+('Camion', 'QEW-098', 'akt', '2020', 1192896810, 'azul', 'Con carroceria', 'Particular', '200', 0x74686f72312e706e67),
+('MOTO', 'QPO-567', 'ktm', '2020', 1192896810, 'azul', 'NO TIENE', 'publico', '220', ''),
+('Carro', 'SXO-666', ' pulsar', ' 2015', 1192896810, ' rojo', 'Sin carroceria', 'Particular', ' 200', 0x74686f72312e706e67),
+('Carro', 'XSO-678', 'pulsar', '2015', 1192896810, 'rojo', 'Con carroceria', 'Particular', '200', ''),
+('Carro', 'ZWE-345', 'pulsar', '2015', 1192896810, 'rojo', 'Con carroceria', 'Publico', '200', '');
